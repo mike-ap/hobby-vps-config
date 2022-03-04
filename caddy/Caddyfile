@@ -1,0 +1,17 @@
+{
+  acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+  log {
+    format json
+    output file /var/log/access.log
+  }
+}
+
+foo.example.com {
+  log
+  reverse_proxy foo:3000
+}
+
+bar.example.com {
+  log
+  reverse_proxy bar:3000
+}

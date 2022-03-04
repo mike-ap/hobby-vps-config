@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  bar:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    networks:
+      - caddy
+    expose:
+      - 3000
+
+networks:
+  caddy:
+    external: true
